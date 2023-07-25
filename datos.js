@@ -5,8 +5,20 @@ const objetoJSONGuardado = localStorage.getItem(dato);
  // Convertir el JSON a un objeto JavaScript usando JSON.parse()
  const objetoRecuperado = JSON.parse(objetoJSONGuardado);
  console.log(objetoRecuperado);
- document.getElementById("nombre").textContent = objetoRecuperado.AREA;
- document.getElementById("area").textContent = objetoRecuperado.CODIGO;
+ document.getElementById("codigo").textContent = objetoRecuperado.CODIGO;
+ document.getElementById("nombre").textContent = objetoRecuperado.NOMBRE_PROYECTO;
+ document.getElementById("fecha").textContent = objetoRecuperado.FECHA_CAPTURA;
+ document.getElementById("tecnologia").textContent = objetoRecuperado.TECNOLOGIA;
+ document.getElementById("latitud").textContent = objetoRecuperado.Latitud;
+ document.getElementById("longitud").textContent = objetoRecuperado.Longitud;
+ document.getElementById("descripcion").textContent = objetoRecuperado.DESCRIPCION;
+ document.getElementById("area").textContent = objetoRecuperado.AREA;
+ document.getElementById("archivo").textContent = objetoRecuperado.ARCHIVO_HTML;
+ document.getElementById("imagen").textContent = objetoRecuperado.RUTA_ORTOMOSAICO
+ ;
+
+ 
+
  //localStorage.removeItem("proyectoSeleccionado");
 
  const servidor =objetoRecuperado.RUTA_HTML //"\\\\servidor\\carpetacompartida";
