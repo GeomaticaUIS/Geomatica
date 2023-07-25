@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>METADATO GEOMÁTICA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!--
+
+        Visualizar datos
+        https://www.w3schools.com/js/js_json.asp
+        https://www.google.com/search?q=visualizar+json+en+html&rlz=1C1VDKB_enCO1044CO1044&source=lnms&sa=X&ved=2ahUKEwiawff5nKWAAxXINkQIHUbRC3MQ0pQJegQIAhAC&biw=1920&bih=937&dpr=1
+
+        material
+    https://materializecss.com/
+
+        conversior excel json
+        https://products.aspose.app/cells/es/conversion
+        
+        animacion 
+        https://www.youtube.com/watch?v=avzupi12bmY&t=717s
+        https://animate.style/-->
+</head>
+<!--file:///C:/inetpub/ https://products.aspose.app/cells/es/conversion/excel-to-json -->
+
+<body>
+
+    <!-- <div class="center section" id="circulo">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+    </div>
+   -->
+    <div  class="contanier" > 
+    <!-- \10.1.90.10\h$\sensor\UAV\2. UAV eBee\1. Area Metropolitana\1. MesonBucaros-02Feb14 
+      <button class="btn blue darken-2" id="btn_consulta"  >Consulta</button>  -->
+        <div class="hide" id="contenido">
+           <table class="highlight" id="miTabla">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre proyecto</th>
+                        <th>Fecha</th>
+                        <th>Tecnología usada</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
+                        <th>Descripción</th>
+                        <th>Área [Km <sup>2</sup>]</th>
+                        <th>Archivo</th>
+                        <th>Imagen</th>
+                    </tr>
+                    <tbody id="respuesta"></tbody>
+                </thead>
+            </table>
+
+        </div>
+    </div> 
+
+    <script src="consulta.js"></script>
+</body>
+</html>
