@@ -44,8 +44,8 @@ const objetoJSONGuardado = localStorage.getItem(dato);
  function initMap() {
      map = new google.maps.Map(document.getElementById("map"), {
          center: { lat:objetoRecuperado.Latitud, lng: objetoRecuperado.Longitud}, // Coordenadas para centrar el mapa en el lugar del proyecto
-         zoom:18, // Nivel de zoom inicial
-        // mapTypeId: 'satellite'
+         zoom:19, // Nivel de zoom inicial
+         mapTypeId: 'satellite'
      });
 
      // Agregar un listener para activar la herramienta de dibujo de polígonos
@@ -57,13 +57,21 @@ const objetoJSONGuardado = localStorage.getItem(dato);
     //          drawingModes: [google.maps.drawing.OverlayType.POLYGON],
     //      },
     //  });
-    //  drawingManager.setMap(map);
+      // drawingManager.setMap(map);
 
     //  // Agregar un listener para capturar el evento cuando se complete el polígono
     //  google.maps.event.addListener(drawingManager, "polygoncomplete", function (poly) {
     //      polygon = poly;
     //      calcularArea(polygon);
     //  });
+    marker = new google.maps.Marker({
+        position: { lat: objetoRecuperado.Latitud, lng: objetoRecuperado.Longitud },
+        title: "Ubicacion", 
+        // Set a custom title for the marker (optional)
+        
+  });
+        marker.setMap(map)
+
  }
 
  // Función para calcular el área del polígono

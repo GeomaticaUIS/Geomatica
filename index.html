@@ -28,20 +28,82 @@
         animacion 
         https://www.youtube.com/watch?v=avzupi12bmY&t=717s
         https://animate.style/-->
+        <style>
+          .container {
+              display: flex;
+              
+              align-items: center;
+          }
+  
+          /* Style for the table input filters */
+          .filtro-container {
+              margin-bottom: 10px;
+          }
+  
+
+          ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+              color: rgb(0, 0, 0);
+              font-style: italic;
+              opacity: 1; /* Firefox */
+          }
+
+          input::placeholder {
+            text-align: center;
+          }
+
+          /* Ajusta el tamaño de las celdas de la tabla para evitar que se haga muy ancha */
+          table {
+              table-layout: fixed;
+          }
+  
+          /* Ajusta el tamaño de las celdas de la cabecera de la tabla */
+          th {
+              width: 20%;
+          }
+      </style>
+        
 </head>
+
 <!--file:///C:/inetpub/ https://products.aspose.app/cells/es/conversion/excel-to-json -->
 
 <body>  
     <!-- \10.1.90.10\h$\sensor\UAV\2. UAV eBee\1. Area Metropolitana\1. MesonBucaros-02Feb14 
       <button class="btn blue darken-2" id="btn_consulta"  >Consulta</button>  -->
+      <div class="container">
+        
+        
+        
+       
+
         <div class="contanier hide" id="contenido">
-           <table class="striped centered light-blue accent-1" id="miTabla">
+            <table class="striped centered light-blue accent-1" id="miTabla">
                 <thead>
                     <tr>
-                        <th>Código</th>
-                        <th>Nombre proyecto</th>
-                        <th>Fecha</th>
-                        <th>Tecnología usada</th>
+                        <th>
+                          <div class="filtro-container">
+                            
+                            <input type="text" id="filtroCodigo" placeholder="Buscar por código">
+                          </div>
+                          Código
+                        </th>
+                        <th>
+                          <div class="filtro-container">
+                            <input type="text" id="filtroNombre" placeholder="Buscar por nombre">
+                          </div>
+                          Nombre proyecto
+                        </th>
+                        <th>
+                          <div class="filtro-container">
+                            <input type="text" id="filtroFecha" placeholder="Buscar por fecha">
+                          </div>
+                          Fecha
+                        </th>
+                        <th>
+                          <div class="filtro-container">
+                            <input type="text" id="filtroTecnologia" placeholder="Buscar por tecnología">
+                          </div>
+                          Tecnología usada
+                        </th>
                         <!-- <th>Latitud</th>
                         <th>Longitud</th>
                         <th>Descripción</th>
@@ -50,9 +112,10 @@
                         <th>Imagen</th> -->
                     </tr>
                 </thead>
-                  <tbody id="respuesta"></tbody> 
+                <tbody id="respuesta"></tbody> 
             </table>
-          </div>  
+        </div>
+    </div>
           
   <!-- <footer class="page-footer bd light-blue darken-3">
     <div class="container">

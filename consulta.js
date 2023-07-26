@@ -30,7 +30,7 @@ function obtenerDatos(){
                         <td>${item.FECHA_CAPTURA}</td>
                         <td>${item.TECNOLOGIA}</td>
                         
-                        <td><button type="button" id="botonEnviar" onclick="enviarDatos('${item.CODIGO}')" class="waves-effect waves-light btn-large bd light-blue darken-3" >Mostrar</button></td>
+                        <td><button type="button" id="botonEnviar" onclick="enviarDatos('${item.CODIGO}')" class="waves-effect waves-light btn-large bd light-blue darken-3" >DETALLES</button></td>
               </tr>
                 `
             }
@@ -76,3 +76,49 @@ function mostrarDetalles(event) {
     //window.location.href = 'datos.html';
 }
  
+// FILTRO
+
+const tabla = document.getElementById('miTabla').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+// Para que tome las tildes
+function removeDiacritics(text) {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+
+function filtrarTabla() {
+
+    const filtroCodigo = removeDiacritics(document.getElementById('filtroCodigo').value.toLowerCase());
+    const filtroNombre = removeDiacritics(document.getElementById('filtroNombre').value.toLowerCase());
+    const filtroFecha = removeDiacritics(document.getElementById('filtroFecha').value.toLowerCase());
+    const filtroTecnologia = removeDiacritics(document.getElementById('filtroTecnologia').value.toLowerCase());
+
+
+    for (let i = 0; i < tabla.length; i++) {
+        const celdaCodigo = tabla[i].getElementsByTagName('td')[0];
+        const celdaNombre = tabla[i].getElementsByTagName('td')[1];
+        const celdaFecha = tabla[i].getElementsByTagName('td')[2];
+        const celdaTecnologia = tabla[i].getElementsByTagName('td')[3];
+
+        const textoCodigo = removeDiacritics(celdaCodigo.textContent.toLowerCase());
+        const textoNombre = removeDiacritics(celdaNombre.textContent.toLowerCase());
+        const textoFecha = removeDiacritics(celdaFecha.textContent.toLowerCase());
+        const textoTecnologia = removeDiacritics(celdaTecnologia.textContent.toLowerCase());
+
+        if (
+            textoCodigo.indexOf(filtroCodigo) > -1 &&
+            textoNombre.indexOf(filtroNombre) > -1 &&
+            textoFecha.indexOf(filtroFecha) > -1 &&
+            textoTecnologia.indexOf(filtroTecnologia) > -1
+        ) {
+            tabla[i].style.display = '';
+        } else {
+            tabla[i].style.display = 'none';
+        }
+    }
+}
+
+document.getElementById('filtroCodigo').addEventListener('keyup', filtrarTabla);
+document.getElementById('filtroNombre').addEventListener('keyup', filtrarTabla);
+document.getElementById('filtroFecha').addEventListener('keyup', filtrarTabla);
+document.getElementById('filtroTecnologia').addEventListener('keyup', filtrarTabla);
