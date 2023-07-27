@@ -13,6 +13,8 @@
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
     <!--
 
         Visualizar datos
@@ -60,6 +62,16 @@
           th {
               width: 20%;
           }
+
+          .desplegar-container {
+            display: flex;             
+            align-items: below;
+          }
+
+          .desplegar-container {
+            display: flex;
+            justify-content: center;
+          }
       </style>
         
 </head>
@@ -69,11 +81,8 @@
 <body>  
     <!-- \10.1.90.10\h$\sensor\UAV\2. UAV eBee\1. Area Metropolitana\1. MesonBucaros-02Feb14 
       <button class="btn blue darken-2" id="btn_consulta"  >Consulta</button>  -->
-      <div class="container">
+      <div class="container">  
         
-        
-        
-       
 
         <div class="contanier hide" id="contenido">
             <table class="striped centered light-blue accent-1" id="miTabla">
@@ -104,6 +113,12 @@
                           </div>
                           Tecnología usada
                         </th>
+                        <div class="desplegar-container">
+                          <button id="btnDesplegar" class="btn-floating btn-large waves-effect waves-light blue fas"><i  class="material-icons">expand_more</i></button>
+                        </div>
+                        <div class="desplegar-container">
+                          <button id="btnDesplegar" class="btn-floating btn-large waves-effect waves-light blue fas"><i  class="material-icons">expand_less</i></button>
+                        </div>
                         <!-- <th>Latitud</th>
                         <th>Longitud</th>
                         <th>Descripción</th>

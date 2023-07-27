@@ -62,20 +62,7 @@ function enviarDatos(get) {
     
     
 } 
-
-function mostrarDetalles(event) {
-    console.log("Hola")
-    const datosCompletos = JSON.parse(event.target.dataset.datos);
-    console.log("Datos completos:", datosCompletos);
-
-//     Guardar los datos en el Local Storage para accederlos desde la página "datos.html"
-    localStorage.setItem('datosSeleccionados', JSON.stringify(datosCompletos));
-
-//     Redireccionar a la página "datos.html" para mostrar los detalles de los datos seleccionados
-    console.log("Redireccionando a 'datos.html'...");
-    //window.location.href = 'datos.html';
-}
- 
+    
 // FILTRO
 
 const tabla = document.getElementById('miTabla').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
@@ -122,3 +109,41 @@ document.getElementById('filtroCodigo').addEventListener('keyup', filtrarTabla);
 document.getElementById('filtroNombre').addEventListener('keyup', filtrarTabla);
 document.getElementById('filtroFecha').addEventListener('keyup', filtrarTabla);
 document.getElementById('filtroTecnologia').addEventListener('keyup', filtrarTabla);
+
+
+    // Desplegador de filas
+    const tablahide = document.getElementById('miTabla').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+    const btnDesplegar = document.getElementById('btnDesplegar');
+    const rowsToShow = 2; // Change this number to the desired number of rows to show/hide
+    let currentRowsToShow = rowsToShow;
+
+
+    function showHideRows() {
+    for (let i = rowsToShow; i < tablahide.length; i++) {
+        if (i >= currentRowsToShow) {
+        tablahide[i].style.display = 'none';
+        } else {
+        tablahide[i].style.display = '';
+        }
+    }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Llama a tu función aquí
+        showHideRows();
+      });
+    
+
+    btnDesplegar.addEventListener('click', () => {
+        for (let i = rowsToShow; i < tabla.length; i++) {
+            if (tablahide[i].style.display === 'none') {
+                tablahide[i].style.display = '';
+                
+            } else {
+                tablahide[i].style.display = 'none';
+                               
+            }
+        }
+        });
+
+        
