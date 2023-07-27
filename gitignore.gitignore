@@ -1,0 +1,6 @@
+# Ignora archivos del sistema Mac 
+#.DS_store 
+#no suba el .conf
+*.conf
+# Ignora los archivos relacionados a API keys
+.env

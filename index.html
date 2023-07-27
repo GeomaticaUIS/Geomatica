@@ -71,7 +71,7 @@
           .desplegar-container {
             display: flex;
             justify-content: center;
-          }
+          } 
       </style>
         
 </head>
@@ -81,9 +81,7 @@
 <body>  
     <!-- \10.1.90.10\h$\sensor\UAV\2. UAV eBee\1. Area Metropolitana\1. MesonBucaros-02Feb14 
       <button class="btn blue darken-2" id="btn_consulta"  >Consulta</button>  -->
-      <div class="container">  
         
-
         <div class="contanier hide" id="contenido">
             <table class="striped centered light-blue accent-1" id="miTabla">
                 <thead>
@@ -112,26 +110,21 @@
                             <input type="text" id="filtroTecnologia" placeholder="Buscar por tecnología">
                           </div>
                           Tecnología usada
-                        </th>
-                        <div class="desplegar-container">
-                          <button id="btnDesplegar" class="btn-floating btn-large waves-effect waves-light blue fas"><i  class="material-icons">expand_more</i></button>
-                        </div>
-                        <div class="desplegar-container">
-                          <button id="btnDesplegar" class="btn-floating btn-large waves-effect waves-light blue fas"><i  class="material-icons">expand_less</i></button>
-                        </div>
-                        <!-- <th>Latitud</th>
-                        <th>Longitud</th>
-                        <th>Descripción</th>
-                        <th>Área [Km <sup>2</sup>]</th>
-                        <th>Archivo</th>
-                        <th>Imagen</th> -->
+                        </th> 
                     </tr>
                 </thead>
                 <tbody id="respuesta"></tbody> 
             </table>
+            
         </div>
-    </div>
-          
+        <div class="desplegar-container">
+          <button id="btnDesplegar" class="btn-floating btn-large waves-effect waves-light blue fas"><i  class="material-icons">expand_more</i></button>
+        </div>
+        <div class="desplegar-container">
+          <button id="btnDesplegar" class="btn-floating btn-large waves-effect waves-light blue fas"><i  class="material-icons">expand_less</i></button>
+        </div>
+ 
+            
   <!-- <footer class="page-footer bd light-blue darken-3">
     <div class="container">
       <div class="row">

@@ -12,7 +12,7 @@ const objetoJSONGuardado = localStorage.getItem(dato);
  document.getElementById("latitud").textContent = objetoRecuperado.Latitud+"°";
  document.getElementById("longitud").textContent = objetoRecuperado.Longitud+"°";
  document.getElementById("descripcion").textContent = objetoRecuperado.DESCRIPCION;
- document.getElementById("area").textContent = objetoRecuperado.AREA +" [Km^2]";
+ document.getElementById("area").textContent = objetoRecuperado.AREA;
  //document.getElementById("archivo").textContent = objetoRecuperado.ARCHIVO_HTML;
  //document.getElementById("imagen").textContent = `${objetoRecuperado.RUTA_HTML}\\${objetoRecuperado.ARCHIVO_HTML}` ;
 

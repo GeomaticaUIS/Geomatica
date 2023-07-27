@@ -29,23 +29,12 @@ function obtenerDatos(){
                         <td>${item.NOMBRE_PROYECTO}</td>
                         <td>${item.FECHA_CAPTURA}</td>
                         <td>${item.TECNOLOGIA}</td>
-                        
                         <td><button type="button" id="botonEnviar" onclick="enviarDatos('${item.CODIGO}')" class="waves-effect waves-light btn-large bd light-blue darken-3" >DETALLES</button></td>
               </tr>
                 `
             }
 
         }
-        //<td>${item.Latitud}</td>
-        // <td>${item.Longitud}</td>
-        // <td> <a href=' ${item.RUTA_CARPETA} '>CARPETA</a>
-        // </td>
-        // <td>${item.AREA}</td> 
-        // <td> '<a href="' +${item.NOMBRE_NUBE_PUNTOS}+ '">'Nube puntos'</a>'</td>
-        // <td>${item.ARCHIVO_HTML}</td>
-        // localStorage.setItem("item",myJsonLocal);
-        // var datosStorage = localStorage.getItem("item");
-        // alert(obj);
     }
 }
 
@@ -64,7 +53,6 @@ function enviarDatos(get) {
 } 
     
 // FILTRO
-
 const tabla = document.getElementById('miTabla').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
 
 // Para que tome las tildes
@@ -145,5 +133,3 @@ document.getElementById('filtroTecnologia').addEventListener('keyup', filtrarTab
             }
         }
         });
-
-        
