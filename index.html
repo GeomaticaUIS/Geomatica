@@ -81,51 +81,56 @@
 <body>  
     <!-- \10.1.90.10\h$\sensor\UAV\2. UAV eBee\1. Area Metropolitana\1. MesonBucaros-02Feb14 
       <button class="btn blue darken-2" id="btn_consulta"  >Consulta</button>  -->
-        
+      <div class="container">
+       <nav>
+        <div class="nav-wrapper">
+          <form> 
+              <div class="input-field white">
+                <input id="search" placeholder="Buscar por nombre, fecha, tecnología" type="search" >
+                <label class="label-icon" for="search"><i class="material-icons ">search</i></label> 
+                <i class="material-icons ">close</i>
+              </div>  
+          </form>
+        </div>
+      </nav> 
+      </div>
+      
+      
         <div class="contanier hide" id="contenido">
             <table class="striped centered light-blue accent-1" id="miTabla">
                 <thead>
                     <tr>
-                        <th>
-                          <div class="filtro-container">
-                            
-                            <input type="text" id="filtroCodigo" placeholder="Buscar por código">
-                          </div>
+                        <th> 
                           Código
                         </th>
-                        <th>
-                          <div class="filtro-container">
-                            <input type="text" id="filtroNombre" placeholder="Buscar por nombre">
-                          </div>
+                        <th> 
                           Nombre proyecto
                         </th>
-                        <th>
-                          <div class="filtro-container">
-                            <input type="text" id="filtroFecha" placeholder="Buscar por fecha">
-                          </div>
+                        <th> 
                           Fecha
                         </th>
-                        <th>
-                          <div class="filtro-container">
-                            <input type="text" id="filtroTecnologia" placeholder="Buscar por tecnología">
-                          </div>
+                        <th> 
                           Tecnología usada
                         </th> 
                     </tr>
                 </thead>
                 <tbody id="respuesta"></tbody> 
-            </table>
-            
+            </table>  
         </div>
-        <div class="desplegar-container">
+        <div class="desplegar-container center">
+          <ul class="pagination" id="pagination" >
+          <!-- <li class="disabled"><a href=""><i class="material-icons">chevron_left</i></a></li>
+          <li class="active"><a href="">1</a></li> 
+          <li class="waves-effect"><a href=""><i class="material-icons">chevron_right</i></a></li> -->
+        </ul>
+        </div>
+ <!--        <div class="desplegar-container">
           <button id="btnDesplegar" class="btn-floating btn-large waves-effect waves-light blue fas"><i  class="material-icons">expand_more</i></button>
         </div>
         <div class="desplegar-container">
           <button id="btnDesplegar" class="btn-floating btn-large waves-effect waves-light blue fas"><i  class="material-icons">expand_less</i></button>
-        </div>
- 
-            
-  <!-- <footer class="page-footer bd light-blue darken-3">
+        </div> 
+  <footer class="page-footer bd light-blue darken-3">
     <div class="container">
       <div class="row">
         <div class="col s12 m8">

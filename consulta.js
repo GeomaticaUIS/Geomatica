@@ -44,13 +44,53 @@ function enviarDatos(get) {
     const dato1 = localStorage.setItem("proyectoSeleccionado",get);
     //var cambio = JSON.parse(dato1);
     //console.log(cambio)
-    
     // Redireccionar a la otra vista HTML
     window.location.href = "datos.html";
     // Opcional: Limpiar el dato del localStorage después de usarlo (si es necesario)
     
-    
 } 
+
+document.addEventListener("DOMContentLoaded", function() {
+    const totalPages = 10; // Reemplaza este valor con la cantidad total de páginas que tengas
+  
+    // Función para generar los elementos de paginación
+    function generatePagination(totalPages) {
+      const paginationContainer = document.getElementById("pagination");
+      paginationContainer.innerHTML = ""; // Limpiamos el contenido previo
+  
+      for (let i = 1; i <= totalPages; i++) {
+        const li = document.createElement("li"); 
+        const link = document.createElement("a");
+        link.href = "#";
+        link.innerText = i;
+  
+        // Añadimos la clase "active" al primer elemento de paginación
+        if (i === 1) {
+          li.classList.add("active");
+        }
+  
+        li.classList.add("waves-effect");
+        li.appendChild(link);
+        paginationContainer.appendChild(li);
+      }
+    }
+  
+    generatePagination(totalPages);
+  
+    // Evento click para cambiar de página
+    document.getElementById("pagination").addEventListener("click", function(event) {
+      event.preventDefault();
+  
+      if (event.target.tagName === "A") {
+        const paginationItems = this.querySelectorAll("li");
+        paginationItems.forEach((item) => item.classList.remove("active"));
+  
+        const clickedItem = event.target.parentElement;
+        clickedItem.classList.add("active");
+      }
+    });
+  });
+  
     
 // FILTRO
 const tabla = document.getElementById('miTabla').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
@@ -63,12 +103,8 @@ function removeDiacritics(text) {
 
 function filtrarTabla() {
 
-    const filtroCodigo = removeDiacritics(document.getElementById('filtroCodigo').value.toLowerCase());
-    const filtroNombre = removeDiacritics(document.getElementById('filtroNombre').value.toLowerCase());
-    const filtroFecha = removeDiacritics(document.getElementById('filtroFecha').value.toLowerCase());
-    const filtroTecnologia = removeDiacritics(document.getElementById('filtroTecnologia').value.toLowerCase());
-
-
+    const buscar= removeDiacritics(document.getElementById('search').value.toLowerCase());
+  
     for (let i = 0; i < tabla.length; i++) {
         const celdaCodigo = tabla[i].getElementsByTagName('td')[0];
         const celdaNombre = tabla[i].getElementsByTagName('td')[1];
@@ -79,12 +115,11 @@ function filtrarTabla() {
         const textoNombre = removeDiacritics(celdaNombre.textContent.toLowerCase());
         const textoFecha = removeDiacritics(celdaFecha.textContent.toLowerCase());
         const textoTecnologia = removeDiacritics(celdaTecnologia.textContent.toLowerCase());
-
         if (
-            textoCodigo.indexOf(filtroCodigo) > -1 &&
-            textoNombre.indexOf(filtroNombre) > -1 &&
-            textoFecha.indexOf(filtroFecha) > -1 &&
-            textoTecnologia.indexOf(filtroTecnologia) > -1
+            textoCodigo.indexOf(buscar) > -1 ||
+            textoNombre.indexOf(buscar) > -1 ||
+            textoFecha.indexOf(buscar) > -1 ||
+            textoTecnologia.indexOf(buscar) > -1
         ) {
             tabla[i].style.display = '';
         } else {
@@ -92,44 +127,39 @@ function filtrarTabla() {
         }
     }
 }
-
-document.getElementById('filtroCodigo').addEventListener('keyup', filtrarTabla);
-document.getElementById('filtroNombre').addEventListener('keyup', filtrarTabla);
-document.getElementById('filtroFecha').addEventListener('keyup', filtrarTabla);
-document.getElementById('filtroTecnologia').addEventListener('keyup', filtrarTabla);
-
+document.getElementById('search').addEventListener('keyup', filtrarTabla); 
 
     // Desplegador de filas
-    const tablahide = document.getElementById('miTabla').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
-    const btnDesplegar = document.getElementById('btnDesplegar');
-    const rowsToShow = 2; // Change this number to the desired number of rows to show/hide
-    let currentRowsToShow = rowsToShow;
+    // const tablahide = document.getElementById('miTabla').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+    // const btnDesplegar = document.getElementById('pagination');
+    // const rowsToShow = 2; // Change this number to the desired number of rows to show/hide
+    // let currentRowsToShow = rowsToShow;
 
 
-    function showHideRows() {
-    for (let i = rowsToShow; i < tablahide.length; i++) {
-        if (i >= currentRowsToShow) {
-        tablahide[i].style.display = 'none';
-        } else {
-        tablahide[i].style.display = '';
-        }
-    }
-    }
+    // function showHideRows() {
+    // for (let i = rowsToShow; i < tablahide.length; i++) {
+    //     if (i >= currentRowsToShow) {
+    //     tablahide[i].style.display = 'none';
+    //     } else {
+    //     tablahide[i].style.display = '';
+    //     }
+    // }
+    // }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Llama a tu función aquí
-        showHideRows();
-      });
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     // Llama a tu función aquí
+    //     showHideRows();
+    //   });
     
 
-    btnDesplegar.addEventListener('click', () => {
-        for (let i = rowsToShow; i < tabla.length; i++) {
-            if (tablahide[i].style.display === 'none') {
-                tablahide[i].style.display = '';
+    // btnDesplegar.addEventListener('click', () => {
+    //     for (let i = rowsToShow; i < tabla.length; i++) {
+    //         if (tablahide[i].style.display === 'none') {
+    //             tablahide[i].style.display = '';
                 
-            } else {
-                tablahide[i].style.display = 'none';
+    //         } else {
+    //             tablahide[i].style.display = 'none';
                                
-            }
-        }
-        });
+    //         }
+    //     }
+    //     });
