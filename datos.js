@@ -16,23 +16,24 @@ const objetoJSONGuardado = localStorage.getItem(dato);
  //localStorage.removeItem("proyectoSeleccionado");<a href=' '> </a>
 
  const servidor =objetoRecuperado.RUTA_CARPETA_NUBE_PUNTOS; //"\\\\servidor\\carpetacompartida";
- const nombreArchivo = objetoRecuperado.NOMBRE_NUBE_PUNTOS//"documento.pdf"; 
- const LINK= `${servidor}\\${nombreArchivo}`;
+ const LINK= `${servidor}`;
+ console.log(servidor)
  const enlaceDescargar = document.createElement('a');
- enlaceDescargar.textContent = 'Descarga el Nube de puntos';
- enlaceDescargar.href = LINK;
- enlaceDescargar.download = nombreArchivo;
+ enlaceDescargar.textContent = 'Descarga la Nube de puntos';
+ enlaceDescargar.addEventListener('click', function(){
+    window.open(servidor,'_blank');
+ });
  const spans =document.getElementById("archivoMosaico");
  spans.appendChild(enlaceDescargar);
 
 
  const servidorMosaico =objetoRecuperado.RUTA_ORTOMOSAICO; //"\\\\servidor\\carpetacompartida";
- const nombreArchivoMosaico = objetoRecuperado.NOMBRE_ORTOMOSAICO//"documento.pdf"; 
- const LinkMosaico= `${servidorMosaico}\\${nombreArchivoMosaico}`;
+ const LinkMosaico= `${servidorMosaico}`;//\\${nombreArchivoMosaico}
  const enlaceDescargarMosaico = document.createElement('a');
- enlaceDescargarMosaico.textContent = 'Descarga el ORTOMOSAICO';
- enlaceDescargarMosaico.href = LinkMosaico;
- enlaceDescargarMosaico.download = nombreArchivo;
+ enlaceDescargarMosaico.textContent = 'Descarga el ORTOMOSAICO'; 
+ enlaceDescargarMosaico.addEventListener('click', function(){
+    window.open(servidorMosaico,'_blank');
+ });
  const spansLaz =document.getElementById("archivoLaz");
  spansLaz.appendChild(enlaceDescargarMosaico);
 
