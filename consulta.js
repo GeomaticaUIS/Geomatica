@@ -130,7 +130,7 @@ function filtrarTabla() {
 document.getElementById('search').addEventListener('keyup', filtrarTabla); 
 
 
-//Borrar input con boton
+//Borrar input con el boton clear
 
 document.addEventListener('DOMContentLoaded', function() {
   var clearSearchIcon = document.getElementById('clear-search');
