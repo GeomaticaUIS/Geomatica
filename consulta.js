@@ -132,14 +132,21 @@ document.getElementById('search').addEventListener('keyup', filtrarTabla);
 
 //Borrar input con boton
 
-document.getElementById('clear-search').addEventListener('click', function () {
-  document.getElementById('search').value = ''; // Establece el valor del input como una cadena vacía
-
-  var tableRows = document.querySelectorAll('.tabla-filtrada tbody tr');
-    tableRows.forEach(function (row) {
-      row.style.display = ''; // Muestra la fila
+document.addEventListener('DOMContentLoaded', function() {
+  var clearSearchIcon = document.getElementById('clear-search');
+  var searchInput = document.getElementById('search');
+  
+  clearSearchIcon.addEventListener('click', function() {
+    // Borrar el contenido del campo de búsqueda
+    searchInput.value = '';
+    
+    // Mostrar todas las filas de la tabla
+    var tableRows = document.querySelectorAll('#miTabla tbody tr');
+    tableRows.forEach(function(row) {
+      row.style.display = '';
     });
   });
+});
 
 
 
