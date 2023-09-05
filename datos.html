@@ -16,6 +16,8 @@
     <!-- Add the Materialize CSS stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQlzGoHdb8eHfu79_QtO6pTpONFlIa3iY&libraries=drawing"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQlzGoHdb8eHfu79_QtO6pTpONFlIa3iY&callback=initMap" async defer></script>
+    
 
 </head>
 <body>
@@ -38,7 +40,7 @@
                         <!-- <p>Imagen: <span id="imagen"></span></p> -->
                     </div>
                     <div class="card-action">
-                        <p>Archivos disponibles: </p>
+                        <p>Archivos disponibles:</p>
                         <a href=""><span id="archivoLaz"></span></a>
                         <a href=""><span id="archivoMosaico"></span></a>
                     </div>
@@ -47,7 +49,11 @@
         </div>
     </div> 
 
-    <iframe id="frame" src="" width="100%" height="620" allow="autoplay"></iframe>
+    <!-- <div id="map" style="height: 500px;"></div> -->
+
+    <!-- <iframe id="frame" src="" width="100%" height="620" allow="autoplay"></iframe> -->
+
+    <iframe id="visor"   src="" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     <!--  
         <div class="col-sm-6">
         <iframe src="" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

@@ -13,8 +13,9 @@
   "NOMBRE_ORTOMOSAICO": "meson_bucaros_mosaic_group1.tif",
   "RUTA_CARPETA_NUBE_PUNTOS": "https://mailuis-my.sharepoint.com/:u:/g/personal/civil_auxinformatica_uis_edu_co/ER3I1haA5NNAhJgEZS1td4EB3AfdueQOf3guRfSfCL0Bsw?e=v1dLJw",
   "NOMBRE_NUBE_PUNTOS": "meson_bucaros_densified_point_cloud.laz",
-  "RUTA_HTML": "\\\\10.1.90.10\\sensor\\UAV\\2. UAV eBee\\1. Area Metropolitana\\1. MesonBucaros-02Feb14\\3. Posproceso\\MesonBucaros_3\\meson_bucaros\\3_dsm_ortho\\2_mosaic\\google_tiles",
-  "ARCHIVO_HTML": "meson_bucaros_mosaic.html"
+  "RUTA_HTML": "archivos\\sensor\\UAV_E_AMB_001\\googlemaps.html",
+  "ARCHIVO_HTML": "meson_bucaros_mosaic.html",
+  "KML": "archivos\\sensor\\UAV_E_AMB_001\\meson_bucaros_mosaic.kml"
  },
  {
   "CODIGO": "UAV_E_AMB_002",

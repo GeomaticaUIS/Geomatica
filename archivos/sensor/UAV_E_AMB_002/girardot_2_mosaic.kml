@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>girardot_2 Pix4D</name>
+<description></description>
+<Style><ListStyle id="hideChildren">
+<listItemType>checkHideChildren</listItemType>
+</ListStyle>
+</Style>
+<NetworkLink>
+<name>15/9726/17033.kml</name>
+<Region>
+<LatLonAltBox>
+<north>7.122696277518295</north>
+<south>7.111794602472421</south>
+<east>-73.135986328125000</east>
+<west>-73.146972656249986</west>
+</LatLonAltBox>
+<Lod>
+<minLodPixels>128</minLodPixels>
+<maxLodPixels>-1</maxLodPixels>
+</Lod>
+</Region>
+<Link>
+<href>15/9726/17033.kml</href>
+<viewRefreshMode>onRegion</viewRefreshMode>
+</Link>
+</NetworkLink>
+<NetworkLink>
+<name>15/9727/17033.kml</name>
+<Region>
+<LatLonAltBox>
+<north>7.122696277518295</north>
+<south>7.111794602472421</south>
+<east>-73.124999999999986</east>
+<west>-73.135986328125000</west>
+</LatLonAltBox>
+<Lod>
+<minLodPixels>128</minLodPixels>
+<maxLodPixels>-1</maxLodPixels>
+</Lod>
+</Region>
+<Link>
+<href>15/9727/17033.kml</href>
+<viewRefreshMode>onRegion</viewRefreshMode>
+</Link>
+</NetworkLink>
+
+</Document>
+</kml>

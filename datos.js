@@ -17,7 +17,8 @@ const objetoJSONGuardado = localStorage.getItem(dato);
 
  const servidor =objetoRecuperado.RUTA_CARPETA_NUBE_PUNTOS; //"\\\\servidor\\carpetacompartida";
  const LINK= `${servidor}`;
- console.log(servidor)
+ const HTML = objetoRecuperado.RUTA_HTML;
+ console.log(" -html ", HTML)
  const enlaceDescargar = document.createElement('a');
  enlaceDescargar.textContent = 'Descarga la Nube de puntos';
  enlaceDescargar.addEventListener('click', function(){
@@ -43,49 +44,24 @@ const objetoJSONGuardado = localStorage.getItem(dato);
  // Abrir el enlace en una nueva pestaña o ventana del navegador
  //
  //window.open(enlace, '_blank');
- const iframe =document.getElementById("frame");
- iframe.src = enlaceMapa;
+//  const iframe =document.getElementById("frame");
+//  iframe.src = enlaceMapa;
+
+
+ const iframeVisor =document.getElementById("visor");
+ iframeVisor.src = HTML;
 
  //AIzaSyCQlzGoHdb8eHfu79_QtO6pTpONFlIa3iY
+//  const KML = objetoRecuperado.KML;
+//  function initMap() {
+//     var map = new google.maps.Map(document.getElementById('map'), {
+//         center: { lat: +objetoRecuperado.Latitud, lng: objetoRecuperado.Longitud }, // Coordenadas iniciales del mapa
+//         zoom: 15 // Nivel de zoom inicial
+//     });
 
- let map;
- let polygon;
-
- function initMap() {
-     map = new google.maps.Map(document.getElementById("map"), {
-         center: { lat:objetoRecuperado.Latitud, lng: objetoRecuperado.Longitud}, // Coordenadas para centrar el mapa en el lugar del proyecto
-         zoom:19, // Nivel de zoom inicial
-         mapTypeId: 'satellite'
-     });
-
-     // Agregar un listener para activar la herramienta de dibujo de polígonos
-    //  const drawingManager = new google.maps.drawing.DrawingManager({
-    //      drawingMode: google.maps.drawing.OverlayType.POLYGON,
-    //      drawingControl: true,
-    //      drawingControlOptions: {
-    //          position: google.maps.ControlPosition.TOP_CENTER,
-    //          drawingModes: [google.maps.drawing.OverlayType.POLYGON],
-    //      },
-    //  });
-      // drawingManager.setMap(map);
-
-    //  // Agregar un listener para capturar el evento cuando se complete el polígono
-    //  google.maps.event.addListener(drawingManager, "polygoncomplete", function (poly) {
-    //      polygon = poly;
-    //      calcularArea(polygon);
-    //  });
-    marker = new google.maps.Marker({
-        position: { lat: objetoRecuperado.Latitud, lng: objetoRecuperado.Longitud },
-        title: "Ubicacion", 
-        // Set a custom title for the marker (optional)
-        
-  });
-        marker.setMap(map)
-
- }
-
- // Función para calcular el área del polígono
- function calcularArea(polygon) {
-     const area = google.maps.geometry.spherical.computeArea(polygon.getPath());
-     alert(`El área del polígono es de aproximadamente ${area} metros cuadrados.`);
- }
+//     // Cargar el archivo KML
+//     var kmlLayer = new google.maps.KmlLayer({
+//         url: KML, // Reemplaza con la URL de tu archivo KML
+//         map: map
+//     });
+// }

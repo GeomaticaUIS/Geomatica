@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>meson_bucaros Pix4D</name>
+<description></description>
+<Style><ListStyle id="hideChildren">
+<listItemType>checkHideChildren</listItemType>
+</ListStyle>
+</Style>
+<NetworkLink>
+<name>15/9728/17034.kml</name>
+<Region>
+<LatLonAltBox>
+<north>7.1335976933727654</north>
+<south>7.1226962775182949</south>
+<east>-73.114013671875</east>
+<west>-73.124999999999986</west>
+</LatLonAltBox>
+<Lod>
+<minLodPixels>128</minLodPixels>
+<maxLodPixels>-1</maxLodPixels>
+</Lod>
+</Region>
+<Link>
+<href>15/9728/17034.kml</href>
+<viewRefreshMode>onRegion</viewRefreshMode>
+</Link>
+</NetworkLink>
+
+</Document>
+</kml>
