@@ -129,6 +129,28 @@ function filtrarTabla() {
 }
 document.getElementById('search').addEventListener('keyup', filtrarTabla); 
 
+
+//Borrar input con el boton clear
+
+document.addEventListener('DOMContentLoaded', function() {
+  var clearSearchIcon = document.getElementById('clear-search');
+  var searchInput = document.getElementById('search');
+  
+  clearSearchIcon.addEventListener('click', function() {
+    // Borrar el contenido del campo de búsqueda
+    searchInput.value = '';
+    
+    // Mostrar todas las filas de la tabla
+    var tableRows = document.querySelectorAll('#miTabla tbody tr');
+    tableRows.forEach(function(row) {
+      row.style.display = '';
+    });
+  });
+});
+
+
+
+
     // Desplegador de filas
     // const tablahide = document.getElementById('miTabla').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
     // const btnDesplegar = document.getElementById('pagination');

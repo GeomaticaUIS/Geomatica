@@ -33,7 +33,6 @@
         <style>
           .container {
               display: flex;
-              
               align-items: center;
           }
   
@@ -72,6 +71,11 @@
             display: flex;
             justify-content: center;
           } 
+
+          body {
+            margin-top: 40px;
+            
+          }
       </style>
         
 </head>
@@ -81,14 +85,15 @@
 <body>  
     <!-- \10.1.90.10\h$\sensor\UAV\2. UAV eBee\1. Area Metropolitana\1. MesonBucaros-02Feb14 
       <button class="btn blue darken-2" id="btn_consulta"  >Consulta</button>  -->
-      <div class="container">
+      <div  class="container ">
        <nav>
-        <div class="nav-wrapper">
+        
+        <div class="nav-wrapper ">
           <form> 
-              <div class="input-field white">
+              <div class="input-field blue lighten-5">
                 <input id="search" placeholder="Buscar por nombre, fecha, tecnología" type="search" >
-                <label class="label-icon" for="search"><i class="material-icons ">search</i></label> 
-                <i class="material-icons ">close</i>
+                <label class="label-icon " for="search"><i class="material-icons black-text ">search</i></label> 
+                <i class="material-icons" id="clear-search">close</i>
               </div>  
           </form>
         </div>
@@ -118,10 +123,10 @@
             </table>  
         </div>
         <div class="desplegar-container center">
-          <ul class="pagination" id="pagination" >
+          <ul class="pagination " id="pagination" >
           <!-- <li class="disabled"><a href=""><i class="material-icons">chevron_left</i></a></li>
-          <li class="active"><a href="">1</a></li> 
-          <li class="waves-effect"><a href=""><i class="material-icons">chevron_right</i></a></li> -->
+          <li class="active "><a href="">1</a></li> 
+          <li class="waves-effect e"><a href=""><i class="material-icons">chevron_right</i></a></li> -->
         </ul>
         </div>
  <!--        <div class="desplegar-container">
